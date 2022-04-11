@@ -52,7 +52,7 @@ AUTH_HEADER="Authorization: token $GITHUB_TOKEN"
 CONTENT_HEADER="Content-Type: application/json"
 
 PR_COMMENTS_URL=$(echo "$GITHUB_EVENT" |jq -r ".pull_request.comments_url")
-PR_COMMENT_URI=$(echo "$GITHUB_EVENT" | jq -r ".repository.issue_comment_url" | sed "s|{/number}||g)
+PR_COMMENT_URI=$(echo "$GITHUB_EVENT" | jq -r ".repository.issue_comment_url" | sed "s|{/number}||g")
 
 ##############
 # Handler: fmt
